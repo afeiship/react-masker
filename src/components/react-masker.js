@@ -1,33 +1,25 @@
 import './style.scss';
+
+import PropTypes from 'prop-types';
+import {ReactBackdrop} from 'react-backdrop';
 import classNames from 'classnames';
 
-export default class extends React.Component{
+export default class extends React.PureComponent{
   static propTypes = {
-    cssClass:React.PropTypes.string,
-    width:React.PropTypes.string
+    className:PropTypes.string,
+    visible:PropTypes.bool,
   };
 
   static defaultProps = {
-    width:'100%'
+    visible:true
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      width:props.width
-    };
-  }
-
   render(){
+    const {className,children,...props} = this.props;
     return (
-      <div className={classNames('react-masker',this.props.cssClass)}>
-        <div className="mask">
-          <div className="bd" style={{width:this.state.width}}>{this.props.children}</div>
-        </div>
-        <div className="img">
-          <img src={this.props.img} alt=""/>
-        </div>
-      </div>
+      <ReactBackdrop {...props} className={classNames('react-masker',className)}>
+        <div className="bd">{children}</div>
+      </ReactBackdrop>
     );
   }
 }

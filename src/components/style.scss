@@ -1,26 +1,10 @@
 .react-masker{
-  position: relative;
-  >.mask{
+  opacity:1!important;
+  background:rgba(0,0,0,0.6)!important;
+  >.bd{
     position: absolute;
-    left:0;bottom:0;
-    top:0;right:0;
-    background: rgba(#000,0.4);
-    >.bd{
-      color:#fff;
-      position: absolute;
-      z-index:2;
-      text-align: center;
-      width:100%;
-      top:50%;
-      text-align: center;
-      transform: translateY(-50%);
-    }
-  }
-
-  >.img{
-    >img{
-      display: block;
-      width: 100%;
-    }
+    top:27.5%;
+    left:50%;
+    transform: translateX(-50%);
   }
 }
