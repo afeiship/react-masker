@@ -16,7 +16,7 @@
 
 ## usage:
 ```jsx
-import ReactMasker from './main';
+import ReactMasker from 'react-masker';
 
 class App extends React.Component{
   state =  {
